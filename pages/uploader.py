@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import OpenCV as cv2
+import cv2
 from keras.models import load_model
 from keras.utils import img_to_array
 from PIL import Image
