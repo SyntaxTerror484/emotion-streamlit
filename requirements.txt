@@ -2,5 +2,5 @@ tensorflow==2.13.0
 Pillow==10.0.1
 numpy==1.22.0
 keras==2.13.1
-opencv-python==4.8.1.78
+cv2==4.8.1.78
 av==10.0.0
