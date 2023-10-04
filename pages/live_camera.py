@@ -1,6 +1,6 @@
 from streamlit_webrtc import webrtc_streamer, RTCConfiguration
 import av
-import OpenCV as cv2
+import cv2
 from keras.models import load_model
 import numpy as np
 from keras.utils import img_to_array
