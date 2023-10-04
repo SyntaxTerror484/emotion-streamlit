@@ -4,3 +4,4 @@ numpy==1.22.0
 keras==2.13.1
 opencv-python
 av==10.0.0
+stremlit-webrtc
