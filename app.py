@@ -13,7 +13,7 @@ with col1:
     st.subheader('Emotion detection')
     st.write(''' Emotion detection is done using a classification model that categorizes emotions into 7 categories: Happy, Sad, Angry, Disgust, Fear, Neutral ''')
     st.write("The model uses 2 sets of CNN's with 2 units each and a connected layer to achieve a final accuracy of 68.5 on the test set")
-    st.image(Image.open("images\emotion.png"), caption="Emotion Detection model")
+    st.image(Image.open("images/emotion.png"), caption="Emotion Detection model")
 with col2:
     st.subheader('Age detection')
     st.write('Age detection is done using a regression model that predicts a person\'s age in the range of 1-90')
@@ -21,7 +21,7 @@ with col2:
 
 
 
-    st.image(Image.open("images\age.png"), caption="Age recognition model")
+    st.image(Image.open("images/age.png"), caption="Age recognition model")
 
 
 st.subheader("Datasets used")
