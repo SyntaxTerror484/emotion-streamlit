@@ -24,7 +24,30 @@ class VideoProcessor:
     def recv(self, frame):
 
         frame_ = frame.to_ndarray(format="bgr24")
+        gray = cv2.cvtColor(frame_, cv2.COLOR_BGR2GRAY)
+        faces = cascade.detectMultiScale(gray, 1.1, 3)
 
+        
+        for x, y, w, h in faces:
+            cv2.rectangle(frame_, (x, y), (x + w, y + h), (0,255,0), 3)
+
+            roi = gray[y : y + h, x : x + w]
+            roi = cv2.resize(roi, (48, 48), interpolation=cv2.INTER_AREA)
+
+            if np.sum([roi]) != 0:
+                roi_ = roi.astype('float')/255.0
+                roi_ = img_to_array(roi_)
+                roi_ = np.expand_dims(roi_, axis=0)
+
+                prediction = prediction_model.predict(roi_)[0]
+                emotion = emotion_labels[prediction.argmax()]
+
+                age = (int(age_model.predict(roi_)))
+                if age >= 20:
+                    age-=5
+                label_pos = (x, y - 10)
+
+                cv2.putText(frame_, f'{emotion}, {int(age)}', label_pos, cv2.FONT_HERSHEY_PLAIN, 2, colors[prediction.argmax()], 2)
 
         return av.VideoFrame.from_ndarray(frame_, format='bgr24')
 
