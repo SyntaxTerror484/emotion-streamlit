@@ -31,4 +31,4 @@ st.divider()
 
 st.subheader('Project Demo')
 st.write("The model can detect multiple faces and emotions")
-st.image(Image.open("images\\demo.png"), caption='an example of multiple face recognition')
+st.image(Image.open("images/demo.png"), caption='an example of multiple face recognition')
