@@ -27,7 +27,8 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     gray = cv2.cvtColor(np.asarray(image), cv2.COLOR_BGR2GRAY)
     faces = cascade.detectMultiScale(gray, 1.1, 3)
-    k = np.asarray(image)
+    img = image.copy()
+    k = np.asarray(img)
 
 
     for x, y, w, h in faces:
